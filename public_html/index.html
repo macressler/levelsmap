@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="google-site-verification" content="3VlMppO8YCbQtC0h_tRQpdsRQcTOBLWnOQhawXqhN-U" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110273512-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-110273512-1');
+        </script>        
+
+        <title>Levelsmap 💡🛠️✈️🌍️ — for digital nomadic makers and solopreneur globetrotters</title>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.css' rel='stylesheet' />
+        <link href='style.css' rel='stylesheet' />      
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+        <meta name="thumbnail" content="https://levelsmap.com/social.jpg" />
+        
+        <!-- facebook shit --> 
+        <meta property="og:site_name"    content="Levelsmap" />
+        <meta property="og:url"          content="https://levelsmap.com" />
+        <meta property="og:type"         content="article" />
+        <meta property="og:title"        content="Levelsmap" />
+        <meta property="og:description"  content="Levelsmap: Think 💡 • Make 🛠️ • Fly ✈️ • Discover 🌍️ — for digital nomadic makers and solopreneur globetrotters." />
+        <meta property="og:image"        content="https://levelsmap.com/social.jpg" />
+        <meta property="og:image:width"  content="2000" />
+        <meta property="og:image:height" content="1047" />
+        
+        <!-- twitter shit -->
+        <meta name="twitter:card"        content="summary_large_image" />
+        <meta name="twitter:site"        content="@mcknco" />
+        <meta name="twitter:creator"     content="@mcknco" />
+        <meta name="twitter:title"       content="Levelsmap" />
+        <meta name="twitter:description" content="Levelsmap: Think 💡 • Make 🛠️ • Fly ✈️ • Discover 🌍️ — for digital nomadic makers and solopreneur globetrotters." />
+        <meta name="twitter:image"       content="https://levelsmap.com/social.jpg" />
+
+    </head>
+    <body>
+        <div id="brand" class="brand emoji"><h1>💡🛠️✈️🌍️</h1></div>
+
+        <div class="upgrade" id="upgrade"><p>Upgrade</p></div>
+
+        <a href="https://github.com/mcknco/levelsmap" target="_blank">
+        <div class="ui-button" id="github-button">
+        <svg id="github" width="20px" height="20px" viewBox="0 0 60 58" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m1324.62 140c-16.355 0-29.616 13.219-29.616 29.527 0 13.04 8.485 24.11 20.256 28.01 1.482.27 2.02-.642 2.02-1.425 0-.7-.025-2.557-.04-5.02-8.238 1.784-9.976-3.958-9.976-3.958-1.347-3.411-3.289-4.317-3.289-4.317-2.689-1.832.204-1.796.204-1.796 2.973.21 4.536 3.043 4.536 3.043 2.642 4.511 6.931 3.208 8.62 2.454.269-1.909 1.033-3.21 1.88-3.948-6.576-.745-13.491-3.279-13.491-14.592 0-3.223 1.155-5.858 3.049-7.922-.305-.747-1.322-3.748.289-7.814 0 0 2.487-.794 8.145 3.03 2.362-.656 4.896-.982 7.415-.995 2.515.013 5.05.339 7.415.995 5.655-3.821 8.136-3.03 8.136-3.03 1.616 4.065.6 7.07.295 7.814 1.898 2.064 3.045 4.7 3.045 7.922 0 11.343-6.925 13.838-13.524 14.569 1.064.912 2.01 2.713 2.01 5.468 0 3.946-.036 7.13-.036 8.098 0 .79.533 1.709 2.036 1.421 11.758-3.913 20.238-14.971 20.238-28.01 0-16.309-13.262-29.527-29.62-29.527" transform="translate(-1295-140)" fill="#181616"/></g></svg>
+        </div>
+        </a>
+
+        <a href="https://twitter.com/mcknco" target="_blank"><div class="attribution"><p>Made by <span class="twcl">@mcknco</span>, say hi ✍️</p></div></a>
+
+
+        <div class="ui-button" id="help-button"><span>?</span></div>
+
+        <div class="ui-button" id="zoom-in-button"><span>+</span></div>
+
+        <div class="ui-button" id="zoom-out-button"><span>-</span></div>        
+
+        <div class="ui-button" id="pin-location-button">
+            <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="my-loc" transform="translate(-8.000000, -8.000000)" fill-rule="nonzero" fill="#000000">
+                        <g id="86cf89c016540189a03968cc2c3befde" transform="translate(8.000000, 8.000000)">
+                            <path id="loc-icon" d="M10.0020408,6.36122449 C7.99387755,6.36122449 6.36530612,7.98979592 6.36530612,9.99795918 C6.36530612,12.0061224 7.99387755,13.6346939 10.0020408,13.6346939 C12.0102041,13.6346939 13.6387755,12.0061224 13.6387755,9.99795918 C13.6387755,7.98979592 12.0102041,6.36122449 10.0020408,6.36122449 Z M18.1265306,9.08979592 C17.7081633,5.3 14.6979592,2.29183673 10.9081633,1.87142857 L10.9081633,0 L9.08979592,0 L9.08979592,1.87346939 C5.3,2.29183673 2.29183673,5.30204082 1.87142857,9.09183673 L0,9.09183673 L0,10.9102041 L1.87346939,10.9102041 C2.29183673,14.7 5.30204082,17.7081633 9.09183673,18.1285714 L9.09183673,20 L10.9102041,20 L10.9102041,18.1265306 C14.7,17.7081633 17.7081633,14.6979592 18.1285714,10.9081633 L20,10.9081633 L20,9.08979592 L18.1265306,9.08979592 Z M10.0020408,16.3632653 C6.4877551,16.3632653 3.63877551,13.5122449 3.63877551,10 C3.63877551,6.48571429 6.48979592,3.63673469 10.0020408,3.63673469 C13.5163265,3.63673469 16.3653061,6.4877551 16.3653061,10 C16.3653061,13.5122449 13.5142857,16.3632653 10.0020408,16.3632653 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="login" id="login">
+            <svg width="48px" height="38px" viewBox="0 0 48 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <path id="twitter-logo" d="M15.09504,37.8397462 C33.20832,37.8397462 43.11552,23.2805305 43.11552,10.6548443 C43.11552,10.2413149 43.11552,9.8296482 43.08672,9.41984427 C45.0140762,8.06732528 46.6778025,6.39265883 48,4.47425604 C46.2026478,5.24692601 44.2959922,5.75364274 42.34368,5.97749133 C44.3995085,4.7834383 45.9381571,2.90539993 46.67328,0.69288349 C44.7401424,1.80579045 42.6252405,2.59011176 40.41984,3.01200114 C37.3671989,-0.137166383 32.5165812,-0.907936206 28.5879346,1.13189512 C24.659288,3.17172645 22.629648,7.51486279 23.63712,11.7259227 C15.7188398,11.3407993 8.3413935,7.71230919 3.3408,1.74347173 C0.726955692,6.10908445 2.06205674,11.6939943 6.38976,14.4976874 C4.82254311,14.452623 3.28949639,14.0424571 1.92,13.3018051 L1.92,13.4228835 C1.92128282,17.9709488 5.22576286,21.8881941 9.8208,22.7887658 C8.37094962,23.1723797 6.84975473,23.2284562 5.37408,22.9526874 C6.66422002,26.8447495 10.3614232,29.5110103 14.57472,29.5877855 C11.0874913,32.2467273 6.77963426,33.6901606 2.34432,33.6858247 C1.56077485,33.6843653 0.777991805,33.6383386 0,33.5479815 C4.50362102,36.3519281 9.74383373,37.8392189 15.09504,37.8322953" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                </g>
+            </svg>
+            <div onclick="login()">
+                <span id="join">JOIN</span>
+                <span id="sign-in">OR SIGN-IN</span>
+            </div>
+        </div>
+
+        <div id="avatar" class="avatar"></div>
+        
+        <div class="ui-modal" id="splash">
+            <div class="ui-dialog-box" id="splash-dialog">
+                <div class="ui-close-button">×</div>
+                <h2>Discover <span id="user-count"></span> digital product makers and tech solopreneurs near you 🏜️🔥</h2>
+                <p>Levelsmap shows nomadic tech entrepreneurs and solo digital product makers around the world.</p>
+                <p>It's inspired by and named in honor of famed maker and nomad <a target="_blank" class="twcl" href="https://twitter.com/levelsio">@levelsio</a>, creator of <a target="_blank" style="color:#FA4D37" href="https://nomadlist.com">Nomad List</a>.</p>
+                <p><strong>Want to join the party?</strong> It's easy! 👩‍💻👨‍💻 Just <a href="javascript:login();" class="twcl">login via twitter</a> to stake your claim.</p>
+            </div>
+
+            <div class="ui-dialog-box" id="help-dialog">
+                <div class="ui-close-button">×</div>
+                <h2>Got feedback? Need help? 👨‍💼🔥</h2>
+                <p>If you ran into a bug 🐞, have a suggestion or just want to say hi — shoot me a message!</p>
+                <div class="ui-feedback-input"><div style="display: flex; justify-content: space-between;">
+                    <input class="input-name" type="text" id="input-name-fb" placeholder="Name"/>
+                    <input class="input-lastname" id="input-lastname-fb" type="text" placeholder="Last name"/>
+                    <input class="input-email" id="input-email-fb" type="text" placeholder="Email"/></div>
+                    <textarea class="textarea-message" id="textarea-message-fb" placeholder="Write your message..."></textarea>
+                    <div class="ui-dialog-button" id="send-button" onclick="sendFeedback('fb')">Send</div>
+                </div>
+                <p>I'm also on twitter — <a target="_blank" class="twcl" href="https://twitter.com/mcknco">@mcknco</a>.</p>
+            </div>
+
+            <div class="ui-dialog-box" id="pin-dialog">
+                <div class="ui-close-button">×</div>
+                <h2>Where are you? 🏝️🔥</h2>
+                <p>You're signed-in! 👏 To pin your twitter avatar to Levelsmap, I'll need to grab your location.</p>
+                <p>Click on the pin button. </p>
+            </div>
+
+            <div class="ui-dialog-box" id="feedback-sent-dialog">
+                <div class="ui-close-button">×</div>
+                <h2>Feedback Sent ✉️🔥</h2>
+                <p>I'm going to set to work 👷 and I'll let you know how I get on. Thanks for your message! 👏</p>
+            </div>
+
+            <div class="ui-dialog-box" id="tos-dialog">
+                <div class="ui-close-button">×</div>
+                <h2>Terms of Service 👨‍🍳🔥</h2>
+                <p>You allow me to publish what you post to this app indefinitely.</p>
+                <p>When providing feedback (through the form, email, etc), you agree to let me use it to improve the app.</p>
+                <p>I'm not liable if you get hurt using the app.</p>
+                <p>That's about it. </p>
+            </div>
+
+            <div class="ui-dialog-box" id="privacy-dialog">
+                <div class="ui-close-button">×</div>
+                <h2>Privacy Policy 🔐🔥</h2>
+                <p>You permit me to grab your twitter profile image and twitter bio to use on this app.</p>
+                <p>You permit me to add myself (<a href="https://twitter.com/mcknco" target="_blank" class="twcl">@mcknco</a>) to the list of people you follow on twitter.</p>
+                <p>You permit me to save your email address so I can contact you for feedback (no BS).</p>
+                <p>Hope that's reasonable.</p>
+            </div>
+                
+            <div class="ui-dialog-box" id="about-dialog">
+                <div class="ui-close-button">×</div>
+                <h2>Levelsmap 🗺️🔥</h2>
+                <p>Hi, I'm <a href="https://twitter.com/mcknco" class="twcl" target="_blank">@mcknco</a>. Levelsmap is <a target="_blank" href="https://mckn.co/first-mvp">my first MVP</a>.</p>
+                                
+                <p class="ident"><a href="https://mckn.co/first-mvp#defining-a-problem-to-solve" target="_blank">Problem</a> 🤔 — tech solopreneurs and nomadic makers are mostly hermits: hard to find creatures.</p>
+                <p class="ident"><a href="https://mckn.co/first-mvp#percolating-ideas" target="_blank">Idea</a> 💡 — figure out if anyone's rocking the serial maker / full-stack artist lifestyle near where I live.</p> 
+                <p class="ident"><a href="https://mckn.co/first-mvp#the-implementation" target="_blank">Solution</a> 🛠 — create a crowdsourced map of cool people to see where in the world they're all at.</p>
+                <p>Read about my full-stack hustling: <a href="https://mckn.co" target="_blank">mckn.co</a>.</p>
+                <p style="font-size:14px;"><a href="javascript:dialogToggle('privacy-dialog');">Privacy</a> • <a href="javascript:dialogToggle('tos-dialog');">TOS</a> • <a href="javascript:dialogToggle('splash-dialog');">Splash</a></p>
+            </div>
+
+            <div class="ui-dialog-box" id="upgrade-dialog">
+                <div class="ui-close-button">×</div>
+                <h2>Upgrade Account 💳🔥</h2>
+                <p>Upgrade to Levelsmap PRO? Awesome. What features would make you happy? I will build them for you!</p>
+                <div class="ui-feedback-input"><div style="display: flex; justify-content: space-between;">
+                    <input class="input-name" type="text" id="input-name-ug" placeholder="Name"/>
+                    <input class="input-lastname" id="input-lastname-ug" type="text" placeholder="Last name"/>
+                    <input class="input-email" id="input-email-ug" type="text" placeholder="Email"/></div>
+                    <textarea class="textarea-message" id="textarea-message-ug" placeholder="Tell me what you'd like to see..."></textarea>
+                    <div class="ui-dialog-button" id="send-button" onclick="sendFeedback('ug')">Send</div>
+                </div>
+                <p>I'm also on twitter — <a target="_blank" class="twcl" href="https://twitter.com/mcknco">@mcknco</a>.</p>
+            </div>
+
+            <div class="ui-dialog-box" id="agree-dialog">
+                <div class="ui-close-button">×</div>
+                <h2>Signing up 📝🔥</h2>
+                <p>I made Levelsmap to help myself and others connect to like-minded product makers. Levelsmap doesn't cost a dime, and I'm extremely happy to have you aborad.</p>
+                <p>Just wanted to make sure you're cool with me adding myself to your twitter</p>
+                <ul><li>fesfesf</li></ul>
+                <div class="ui-feedback-input"><div style="display: flex; justify-content: space-between;">
+                    <input class="input-name" type="text" id="input-name-ug" placeholder="Name"/>
+                    <input class="input-lastname" id="input-lastname-ug" type="text" placeholder="Last name"/>
+                    <input class="input-email" id="input-email-ug" type="text" placeholder="Email"/></div>
+                    <textarea class="textarea-message" id="textarea-message-ug" placeholder="Tell me what you'd like to see..."></textarea>
+                    <div class="ui-dialog-button" id="send-button" onclick="sendFeedback('ug')">Send</div>
+                </div>
+                <p>I'm also on twitter — <a target="_blank" class="twcl" href="https://twitter.com/mcknco">@mcknco</a>.</p>
+            </div>            
+
+        </div>
+            
+        <svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 512 512" xml:space="preserve">
+            <g><path fill="#1da1f2" d="M0,32c0,64,96,192,320,192V96l192,192L320,480V352C143.563,352,0,208.437,0,32z"/></g>
+        </svg>
+        
+
+
+        <div id='map'></div>
+
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoibWNrbmNvIiwiYSI6ImNqOXZrd3J2ejQzc2syeXBoZnlvaDFwNGgifQ.mCXPKyoM3ZJsxfZXNhGv2w';
+            var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v9'});
+
+            var isSet = false;
+            var lngLat = null;
+            var marker = null;
+            var popup = null;
+
+            function popupText(user, desc, url){
+                var link = ""; 
+                var description = "";
+                if(url) link = "<a target=\"_blank\" href=http://" + url + ">" + url + "</a>"; 
+                if(desc) description = desc;
+                return "<a target=\"_blank\" href=https://twitter.com/"+user+" class=twcl>@"+user+"</a> " + description + " " + link;
+            }
+
+            //load json data via ajax
+            var jsr = new XMLHttpRequest();
+            jsr.onreadystatechange = function(){
+                if(jsr.readyState == 4 && jsr.status == 200){
+                    var json = JSON.parse(jsr.responseText);
+
+                    document.getElementById("user-count").innerText = Object.keys(json).length;
+                    for (var i in json){
+
+                        var el = document.createElement('div');
+                        el.className = 'marker';
+                        el.id = "@"+i;
+                        el.style.backgroundImage = "url(/img/" + json[i].img + ")";
+                        
+                        var txt = popupText(i,json[i].desc,json[i].url);
+                        var popup = new mapboxgl.Popup({closeButton: false, closeOnClick: true, offset:36}).setHTML(txt);
+                        new mapboxgl.Marker(el).setLngLat([json[i].lng,json[i].lat]).setPopup(popup).addTo(map);
+                    }                        
+                }
+            }
+            jsr.open("GET","/map.json",true);
+            console.log("GET /map");
+            jsr.send();
+
+            function sendLocation(){
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST","/submit.php",true);
+                xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                xhr.setRequestHeader('X-Requested-With','XMLHttpRequest');
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4 && xhr.status == 200){
+                        console.log("200 /submit")
+                        console.log(xhr.responseText);
+                        var json = JSON.parse(xhr.responseText);
+                        console.log(json);
+                    }
+                }
+                var payload = "lat=" + lngLat.lat + "&lng=" + lngLat.lng;
+                console.log("POST /submit: " + payload);
+                xhr.send(payload);
+            }
+
+            function addMarkerToMap(){
+                var old = document.getElementById(marker.id);
+                if (old != null){ old.parentNode.removeChild(old); }
+                new mapboxgl.Marker(marker).setLngLat([lngLat.lng,lngLat.lat]).setPopup(popup).addTo(map);
+                map.panTo(lngLat,{zoom: 8, duration: 2000});
+                isSet = true;
+                sendLocation();                    
+            }
+
+            function getLocation(){
+                navigator.geolocation.getCurrentPosition(function(position) {  
+                    document.getElementById("arrow").style.display = "none";
+                    lngLat = new mapboxgl.LngLat(position.coords.longitude, position.coords.latitude);
+                    map.panTo(lngLat,{zoom: 8, duration: 2000});
+                    
+                    if(!isSet && marker != null){
+                        dialogToggle(null);
+                        addMarkerToMap();
+                    }
+                });
+            }
+
+
+            document.getElementById("zoom-in-button").addEventListener("click",function(){map.zoomIn();});
+            document.getElementById("zoom-out-button").addEventListener("click",function(){map.zoomOut();});
+
+            function login(){
+                window.open('/login.php', 'twitter_popup', 'width=600, height=300');
+            }
+
+            var abtBtn = document.getElementById("brand");
+            abtBtn.addEventListener("click",function(){ dialogToggle("about-dialog"); })
+            var twtrLogo = document.getElementById("twitter-logo");
+            var lgnBtn = document.getElementById("login");
+            lgnBtn.addEventListener("mouseover",function(){twtrLogo.style.fill = "#1da1f2";});
+            lgnBtn.addEventListener("mouseout",function(){twtrLogo.style.fill = "#000";});
+            lgnBtn.addEventListener("click", login);
+
+            var locBtn = document.getElementById("pin-location-button");            
+            var locIcon = document.getElementById("loc-icon");
+            locBtn.addEventListener("mouseover",function(event){
+                locIcon.style.fill = "#1da1f2";
+            });
+            locBtn.addEventListener("mouseout",function(event){
+                locIcon.style.fill = "#000";
+            });
+            locBtn.addEventListener("click",function(){ getLocation(); });
+
+
+            // all ui close buttons close parent
+            var cbs = document.getElementsByClassName("ui-close-button");
+            for(var i=0;i<cbs.length;i++){
+                cbs[i].addEventListener("click",function(){ 
+                    this.parentNode.style.display = "none";
+                });
+            }
+
+            function dialogToggle(dialog){
+                // hide all dialogs
+                var dlgs = document.getElementsByClassName("ui-dialog-box");
+                for(var i=0;i<dlgs.length;i++){
+                    if(dlgs[i].id == dialog) {
+                        dlgs[i].style.display = (dlgs[i].style.display == "block" ? "none" : "block");                            
+                    } else {
+                        dlgs[i].style.display = "none";
+                    }
+                }
+            }
+            var hlpBtn = document.getElementById("help-button");
+            hlpBtn.addEventListener("click",function(){ dialogToggle("help-dialog"); });
+
+            if(document.cookie.indexOf("firstVisit=no") == -1) {
+                var splsh = document.getElementById("splash-dialog");
+                splsh.style.display = "block";
+            }
+            
+            function popupclose(success){
+                if(success == "false"){ return; }
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4 && xhr.status == 200){
+                        console.log("200 /retreve");
+                        console.log(xhr.responseText);
+                        var json = JSON.parse(xhr.responseText);
+                        console.log(json);
+
+                        lgnBtn.style.display = 'none';
+ 
+                        // hide dialog boxes
+                        var dlgs = document.getElementsByClassName("ui-dialog-box");
+                        for(var i=0;i<dlgs.length;i++){
+                            dlgs[i].style.display = "none";
+                        }
+
+                        // add avatar
+                        var av = document.getElementById("avatar");
+                        av.style.backgroundImage = "url(" + json.img + ")";
+                        av.style.display = 'block';
+
+                        marker = document.createElement('div');
+                        marker.className = 'marker';
+                        marker.style.backgroundImage = "url(" + json.img + ")";
+                        marker.id = "@" + json.screen_name;
+
+                        var txt = popupText(json.screen_name,json.desc,json.url);
+                        popup = new mapboxgl.Popup({closeButton: false, closeOnClick: true, offset:36}).setHTML(txt);
+
+                        if(lngLat != null){
+                            addMarkerToMap();
+                        } else {
+                            dialogToggle("pin-dialog");
+                            document.getElementById("arrow").style.display = "block";
+                        }
+
+                    }
+                }
+                xhr.open("GET","/retreve.php",true);
+                xhr.setRequestHeader('X-Requested-With','XMLHttpRequest');
+                console.log("GET /retreve");
+                xhr.send();
+            }
+
+            function setCookie() {
+                var d = new Date();
+                d.setTime(d.getTime() + (6*365*24*60*60*1000));
+                var expires = "expires="+ d.toUTCString();
+                document.cookie = "firstVisit=no;" + expires + ";path=/";
+            }
+
+            setCookie();
+
+            function sendFeedback(source){
+                var name = document.getElementById("input-name" + "-" + source).value;
+                var lastname = document.getElementById("input-lastname" + "-" + source).value;
+                var email = document.getElementById("input-email" + "-" + source).value;
+                var message = document.getElementById("textarea-message" + "-" + source).value;
+
+                source = (source == "fb") ? "feedback" : "upgrade";
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4 && xhr.status == 200){
+                        dialogToggle("feedback-sent-dialog");
+                    }
+                }                
+                xhr.open("POST","/feedback.php",true);
+                xhr.setRequestHeader('X-Requested-With','XMLHttpRequest');
+                xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                xhr.send("name="+name+"&lastname="+lastname+"&email="+email+"&message="+message+"&source="+source);
+            }
+
+            var usp = new URLSearchParams(window.location.search);
+            if(usp.get("show") != null) {
+                console.log( usp.get("show") + "-dialog" );
+                document.getElementById( usp.get("show") + "-dialog" ).style.display = "block";
+            }
+
+            var ug = document.getElementById("upgrade");
+            document.getElementById("avatar").addEventListener("click",function(){ 
+                if(ug.style.display == "flex"){
+                    ug.style.display = "none";
+                }else{
+                    ug.style.display = "flex";                    
+                } 
+            });
+
+            ug.addEventListener("click",function(){
+                dialogToggle("upgrade-dialog");
+            });
+
+        </script>
+
+
+
+    </body>
+</html>
